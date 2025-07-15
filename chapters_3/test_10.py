@@ -1,0 +1,18 @@
+things_function = ['qingxiu mountain','daming mountain','yongjiang river','changjiang river','china','america','nanning city','guilin city','chinese','english','food','study']
+print(f"{things_function},{len(things_function)}")
+things_function.append('ps5')
+things_function.insert(5,'car')
+print(f"{things_function},{len(things_function)}")
+things_function.pop()
+print(f"{things_function},{len(things_function)}")
+del things_function[0]
+print(f"{things_function},{len(things_function)}")
+things_function.remove('changjiang river')
+print(f"{things_function},{len(things_function)}")
+things_function.pop(6)
+print(f"{things_function},{len(things_function)}")
+things_function.sort(reverse=True)
+print(things_function)
+print(sorted(things_function))
+things_function.reverse()
+print(things_function)
