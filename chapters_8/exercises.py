@@ -166,13 +166,28 @@
 # print(user_profile)
 
 # 8.14
-def build_car_info(maker,model,**car_info):
-    """"创建一个字典，返回车辆信息"""
-    car_info[maker] = maker
-    car_info[model] = model
-    return car_info
+# def build_car_info(maker,model,**car_info):
+#     """"创建一个字典，返回车辆信息"""
+#     car_info[maker] = maker
+#     car_info[model] = model
+#     return car_info
 
-car_messages = build_car_info('subaru','outback',
-                              color='blue',
-                              tow_package=True)
-print(car_messages)                        
+# car_messages = build_car_info('subaru','outback',
+#                               color='blue',
+#                               tow_package=True)
+# print(car_messages)                        
+
+# 8.15
+# from printing_functions import print_models,show_completed_models
+
+# unprinted_designs = ['phone case','robot pendant','dodecahedron']
+# completed_models = []
+
+# print_models(unprinted_designs,completed_models)
+# show_completed_models(completed_models)
+
+# for unprinted_design in unprinted_designs:
+#         print(unprinted_design)
+
+# 8.16
+# making_pizzas.py
