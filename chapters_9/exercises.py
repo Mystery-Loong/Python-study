@@ -29,26 +29,55 @@
 # three_restaurant.describe_restaurant()
 
 # 9.3
-class User:
-    """创建用户类包含first_name和last_name"""
-    def __init__(self,first_name,last_name):
-        """初始化first_name和last_name"""
-        self.first_name = first_name
-        self.last_name = last_name
+# class User:
+#     """创建用户类包含first_name和last_name"""
+#     def __init__(self,first_name,last_name):
+#         """初始化first_name和last_name"""
+#         self.first_name = first_name
+#         self.last_name = last_name
 
-    def describe_user(self):
-        """显示登入系统"""
-        print(f"\n{self.first_name} {self.last_name} is login now!")
+#     def describe_user(self):
+#         """显示登入系统"""
+#         print(f"\n{self.first_name} {self.last_name} is login now!")
 
-    def greet_user(self):
-        """向用户问好"""
-        print(f"{self.first_name} {self.last_name} welcome come back!")
+#     def greet_user(self):
+#         """向用户问好"""
+#         print(f"{self.first_name} {self.last_name} welcome come back!")
 
-one_user = User('Quantum','Panda')
-two_user = User('Captain','Churro')
+# one_user = User('Quantum','Panda')
+# two_user = User('Captain','Churro')
 
-one_user.describe_user()
-one_user.greet_user()
+# one_user.describe_user()
+# one_user.greet_user()
 
-two_user.describe_user()
-two_user.greet_user()
+# two_user.describe_user()
+# two_user.greet_user()
+
+# 9.4
+class Restaurant:
+    """创建一家餐馆"""
+
+    def __init__(self,name,type):
+        """初始化属性name和type"""
+        self.name = name
+        self.type = type
+        self.number_served = 1000
+
+    def set_number_served(self,number_served):
+        """显示餐馆就餐过的人数"""
+        if number_served >= self.number_served:
+            self.number_served = number_served
+            print(f"The {self.name}-{self.type} restaurant had served {self.number_served} people so far!")
+        else:
+            print("You can't reduce the served numbers")
+
+    def increment_number_served(self,number):
+        """增加指定的人数"""
+        print(f"This restaurant serve {number} people every day")
+
+restaurant = Restaurant('最美味','烧烤')
+
+# restaurant.number_served = 50
+restaurant.set_number_served(2000)
+# print(f"The {restaurant.name}-{restaurant.type} restaurant had served {restaurant.number_served} perpeo so far!")
+restaurant.increment_number_served(500)
