@@ -42,7 +42,16 @@ class Battery:
 
     def describe_battery(self):
         """打印一条描述电池容量的消息"""
-        print(f"This car has a {self.battry_size}-kwh battery.")
+        print(f"This car has a {self.battery_size}-kwh battery.")
+
+    def get_range(self):
+        """打印一条信息，指出电池的续航里程"""
+        if self.battery_size == 40:
+            range = 150
+        else:
+            range = 225
+        
+        print(f"This car can go about {range} miles on a full charge.")
 
 class ElectriCar(Car):
     """电动汽车的独特之处"""            
@@ -52,7 +61,7 @@ class ElectriCar(Car):
         初始化父类的属性,再初始化电动汽车特有的属性
         """
         super().__init__(make,model,year)
-        self.battery_size = Battery()
+        self.battery = Battery()
 
     # def describe_battery(self):
     #     """打印一条描述电池容量的消息"""
@@ -63,3 +72,4 @@ class ElectriCar(Car):
 my_leaf = ElectriCar('nissan','leaf',2024)
 print(my_leaf.get_descriptive_name())
 my_leaf.battery.describe_battery()
+my_leaf.battery.get_range()
