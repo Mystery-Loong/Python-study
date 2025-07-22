@@ -336,3 +336,20 @@
 # my_leaf.battery.get_range()
 # my_leaf.battery.upgrade_battery()
 # my_leaf.battery.get_range()
+
+# 9.10
+# from restaurant import Restaurant
+
+# my_restaurant = Restaurant('最美味','烧烤')
+# my_restaurant.set_number_served(5000)
+
+# 9.11
+# from admin import Admin
+
+# admin_privileges = Admin('Mystery','Loong')
+# admin_privileges.privileges.show_privileges()
+
+# 9.12
+from admin import Admin
+admin_privileges = Admin('Mystery','Loong')
+admin_privileges.privileges.show_privileges()
