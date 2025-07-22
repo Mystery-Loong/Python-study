@@ -1,3 +1,6 @@
+"""一个组用于表示燃油汽车和电动汽车的类"""
+
+
 class Car:
     """一次模拟汽车的简单尝试"""
 
@@ -34,17 +37,31 @@ class Car:
         else:
             print("You can't roll back an odometer!")
 
-# my_new_car = Car('aodi','a4',2024)
-# print(my_new_car.get_descriptive_name())
+# class Battery:
+#     """一次模拟电动汽车电池的简单尝试"""
+#     def __init__(self,battery_size=40):
+#         """初始化电池的属性"""
+#         self.battery_size = battery_size
 
-# my_new_car.update_odometer(60)
-# my_new_car.read_odometer()
+#     def describe_battery(self):
+#         """打印一条描述电池容量的消息"""
+#         print(f"This car has a {self.battery_size}-kwh battery.")
 
-my_used_car = Car('subaru','outback',2019)
-print(my_used_car.get_descriptive_name())
+#     def get_range(self):
+#         """打印一条信息，指出电池的续航里程"""
+#         if self.battery_size == 40:
+#             range = 150
+#         else:
+#             range = 225
+        
+#         print(f"This car can go about {range} miles on a full charge.")
 
-my_used_car.update_odometer(23_500)
-my_used_car.read_odometer()
+# class ElectricCar(Car):
+#     """电动汽车的独特之处"""            
 
-my_used_car.increment_odometer(-100)
-my_used_car.read_odometer()
+#     def __init__(self,make,model,year):
+#         """
+#         初始化父类的属性,再初始化电动汽车特有的属性
+#         """
+#         super().__init__(make,model,year)
+#         self.battery = Battery()
