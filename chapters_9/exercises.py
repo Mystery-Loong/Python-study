@@ -390,8 +390,8 @@
 # 9.15
 from random import choice
 
-ticket_numbers = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e']
-my_ticket = ['2','5','6','d']
+ticket_numbers = ('0','1','2','3','4','5','6','7','8','9','a','b','c','d','e')
+my_ticket = ('2','5','6','d')
 active = True
 times = 0
 
@@ -405,6 +405,7 @@ while active:
 
     times += 1
     winning_numbers.sort()
+    winning_numbers = tuple(winning_numbers)
     
     if my_ticket == winning_numbers:
         active = False
