@@ -350,6 +350,65 @@
 # admin_privileges.privileges.show_privileges()
 
 # 9.12
-from admin import Admin
-admin_privileges = Admin('Mystery','Loong')
-admin_privileges.privileges.show_privileges()
+# from admin import Admin
+# admin_privileges = Admin('Mystery','Loong')
+# admin_privileges.privileges.show_privileges()
+
+# 9.13
+# """一个骰子的类"""
+
+# from random import randint
+
+# class Die:
+#     def __init__(self,sides=6):
+#         """初始化属性"""
+#         self.sides = sides
+
+#     def roll_die(self):
+#         """根据sides范围，返回随机一个数字"""
+#         number = randint(1,self.sides)
+#         print(number)
+
+# die = Die(20)
+# num = 10
+# while num:
+#     die.roll_die()
+#     num -= 1
+
+# 9.14
+# from random import choice
+
+# ticket_numbers = (0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e')
+
+# number = 4
+# print("The winning numbers are following: ")
+# while number:
+#     winning_number = choice(ticket_numbers)
+#     number -= 1
+#     print(f"\t{winning_number}")
+
+# 9.15
+from random import choice
+
+ticket_numbers = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e']
+my_ticket = ['2','5','6','d']
+active = True
+times = 0
+
+while active:
+    num = 4
+    winning_numbers = []
+    while num:
+        number = choice(ticket_numbers)
+        winning_numbers.append(number)
+        num -= 1
+
+    times += 1
+    winning_numbers.sort()
+    
+    if my_ticket == winning_numbers:
+        active = False
+    else:
+        print(times)
+             
+print(f"I winning by {times} times")
