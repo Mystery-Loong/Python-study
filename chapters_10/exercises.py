@@ -89,10 +89,78 @@
     #     print(f"The {filename} content is: \n{contents}")
 
 # 10.10
+# from pathlib import Path
+
+# path = Path('alice.txt')
+# contents = path.read_text(encoding='utf-8')
+# count_the = contents.lower().count('alice')
+
+# print(f"The 'alice' appear {count_the} in {path}")
+
+# 10.11
+# from pathlib import Path
+# import json
+
+# favorite_number = input("Pleas enter you favorite number:")
+
+# path = Path('favorite_number.txt')
+# contents = json.dumps(favorite_number)
+# path.write_text(contents)
+
+# contents = path.read_text()
+# number = json.loads(contents)
+# print(f"I know your favorite number! It's {number}")
+
+# 10.12
+# from pathlib import Path
+# import json
+
+# path = Path('favorite_number.json')
+
+# if path.exists():
+#     contents = path.read_text()
+#     number = json.loads(contents)
+#     print(f"I know your favorite number! It's {number}")
+# else:
+#     contents = input("Please enter you favorite's number: ")
+#     number = json.dumps(contents)
+#     path.write_text(number)
+
+# 10.13
 from pathlib import Path
+import json
 
-path = Path('alice.txt')
-contents = path.read_text(encoding='utf-8')
-count_the = contents.lower().count('alice')
+usermessages = {}
+def get_stored_usermessages(path):
+    """如果存储了用户名信息，就获取它们"""
+    if path.exists():
+        contents = path.read_text()
+        usermessages = json.loads(contents)
+        return usermessages
+    else:
+        return None
 
-print(f"The 'alice' appear {count_the} in {path}")
+def get_new_usermessages(path):
+    """提示用户输入用户名、年龄、性别"""
+    username = input("What is your name? ")
+    age = input("What is your age? ")
+    sex = input("What is your sex? ")
+    usermessages[username] = username
+    usermessages[age] = age
+    usermessages[sex] = sex
+    contents = json.dumps(usermessages)
+    path.write_text(contents)
+    return usermessages
+
+def greet_user():
+    """问候用户，并指出其名字、年龄、性别"""
+    path = Path('usermessages.json')
+    usermessages = get_stored_usermessages(path)
+    if usermessages:
+        print(f"Welcome back, {usermessages['username']}")
+        print(f"Your messages are {usermessages}")
+    else:
+        usermessages = get_new_usermessages(path)
+        print(f"We'll remenber you when you come back, {usermessages['username'].title()}")
+        print(f"Your messages are {usermessages}")
+greet_user()
