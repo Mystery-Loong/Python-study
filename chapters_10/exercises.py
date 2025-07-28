@@ -145,9 +145,9 @@ def get_new_usermessages(path):
     username = input("What is your name? ")
     age = input("What is your age? ")
     sex = input("What is your sex? ")
-    usermessages[username] = username
-    usermessages[age] = age
-    usermessages[sex] = sex
+    usermessages['username'] = username
+    usermessages['age'] = age
+    usermessages['sex'] = sex
     contents = json.dumps(usermessages)
     path.write_text(contents)
     return usermessages
@@ -157,10 +157,20 @@ def greet_user():
     path = Path('usermessages.json')
     usermessages = get_stored_usermessages(path)
     if usermessages:
-        print(f"Welcome back, {usermessages['username']}")
-        print(f"Your messages are {usermessages}")
+        username = usermessages['username']
+        answer = input(f"Your user name whether or not is {username.title()}?\
+                       yes or no?")
+        if answer == 'yes':
+            print(f"Welcome back, {username}")
+            print(f"Your messages are {usermessages}")
+        else:
+            usermessages = get_new_usermessages(path)
+            username = usermessages['username']
+            print(f"We'll remenber you when you come back, {username.title()}")
+            print(f"Your messages are {usermessages}")
     else:
         usermessages = get_new_usermessages(path)
-        print(f"We'll remenber you when you come back, {usermessages['username'].title()}")
+        username = usermessages['username']
+        print(f"We'll remenber you when you come back, {username.title()}")
         print(f"Your messages are {usermessages}")
 greet_user()
