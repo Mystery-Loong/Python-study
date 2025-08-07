@@ -22,4 +22,4 @@ ax.axis([0,1100,0,1_100_000])
 # ax.ticklabel_format(style='plain')
 
 plt.show()
-plt.savefig('squares_plot1.png')
+plt.savefig('squares_plot.png')

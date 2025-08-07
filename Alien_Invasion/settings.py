@@ -13,7 +13,7 @@ class Settings:
 
         # 子弹设置
         self.bullet_speed = 2.0
-        self.bullet_width = 3000
+        self.bullet_width = 100
         self.bullet_height = 15
         self.bullet_color = (60,60,60)
         self.bullets_allowed = 3
@@ -33,7 +33,7 @@ class Settings:
 
     def initialize_dynamic_settings(self):
         """初始化随游戏进行而变化的设置"""
-        self.ship_speed = 1.5
+        self.ship_speed = 5
         self.bullet_speed = 2.5
         self.alien_speed = 1.0
 

@@ -21,12 +21,12 @@ class AlienInvasion:
         self.settings = Settings()
 
         # 窗口运行
-        self.screen = pygame.display.set_mode(
-            (self.settings.screen_width,self.settings.screen_height))
+        # self.screen = pygame.display.set_mode(
+        #     (self.settings.screen_width,self.settings.screen_height))
         # 全屏运行
-        # self.screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
-        # self.settings.screen_width = self.screen.get_rect().width
-        # self.settings.screen_height = self.screen.get_rect().height
+        self.screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
+        self.settings.screen_width = self.screen.get_rect().width
+        self.settings.screen_height = self.screen.get_rect().height
 
         pygame.display.set_caption("Alien Invasion")
 
@@ -137,7 +137,7 @@ class AlienInvasion:
         """响应子弹和外星人的碰撞"""
         # 删除发生碰撞的子弹和外星人
         collisions = pygame.sprite.groupcollide(
-            self.bullets,self.aliens,False,True)
+            self.bullets,self.aliens,True,True)
         
         if collisions:
             for aliens in collisions.values():
