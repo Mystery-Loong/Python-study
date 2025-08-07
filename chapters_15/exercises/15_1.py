@@ -8,10 +8,10 @@ y_cubes_2 = [x**3 for x in x_cubes_2]
 
 plt.style.use('seaborn-v0_8')
 fig, ax = plt.subplots()
-ax.scatter(x_cubes,y_cubes,s=100)
+ax.scatter(x_cubes,y_cubes,c=y_cubes,cmap=plt.cm.Blues,s=100)
 
 fig, ax2 = plt.subplots()
-ax2.scatter(x_cubes_2,y_cubes_2,s=10)
+ax2.scatter(x_cubes_2,y_cubes_2,c=y_cubes_2,cmap=plt.cm.Blues,s=10)
 
 # 设置图题并给坐标轴加上标签
 ax.set_title("Cube Number",fontsize=24)
