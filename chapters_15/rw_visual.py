@@ -25,7 +25,8 @@ while True:
     ax.get_xaxis().set_visible(False)
     ax.get_yaxis().set_visible(False)
 
-    plt.show()
+    # plt.show()
+    plt.savefig('squares_plot.png')
 
     keep_running = input("Make another walk? (y/n):")
     if keep_running == 'n':
