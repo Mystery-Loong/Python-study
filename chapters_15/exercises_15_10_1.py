@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 
 from die import Die
 
@@ -20,12 +19,12 @@ for value in poss_results:
     frequencies.append(frequency)
 
 # 对结果进行可视化
-plt.style.use('_mpl-gallery')
 fig, ax = plt.subplots()
+ax.bar(poss_results, frequencies, width=0.7)
 
-ax.bar(poss_results, frequencies, width=0.8)
-
-# ax.set(xlim=(0, 8), xticks=np.arange(1, 8),
-#        ylim=(0, 8), yticks=np.arange(1, 8))
+# 设置图题并给坐标轴加上标签
+ax.set_title("Results of Rolling a D6 1000 times", fontsize=24)
+ax.set_xlabel("Result", fontsize=14)
+ax.set_ylabel("Frequency of Result", fontsize=14)
 
 plt.show()
