@@ -37,6 +37,7 @@ ax.set_title(title, fontsize=20)
 ax.set_xlabel('', fontsize=16)
 fig.autofmt_xdate()
 ax.set_ylabel("Temperature (F)", fontsize=16)
+ax.set_ylim(0, 130)
 ax.tick_params(labelsize=16)
 
 plt.show()
